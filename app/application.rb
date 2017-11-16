@@ -30,6 +30,10 @@ class Application
   end
 
   def cart
-    @@cart
+    if @@cart.count == 0
+      puts "Your cart is empty"
+    else
+      @@cart.to_s
+    end
   end
 end
