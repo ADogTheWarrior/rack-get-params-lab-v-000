@@ -21,7 +21,6 @@ class Application
 
     elsif req.path.match(/add/)
       add_term = req.params["item"]
-  puts "req.params = #{req.params}"
       resp.write handle_add(add_term)
 
     else
