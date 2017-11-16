@@ -46,6 +46,7 @@ class Application
 
   def add
     if @@items.includes?("Apples")
+      # add apples
     else
       "We don't have that item"
     end
