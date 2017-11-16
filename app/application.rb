@@ -32,7 +32,7 @@ class Application
   def cart(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    
+
     if @@cart.count == 0
       resp.write "Your cart is empty"
     else
@@ -40,7 +40,7 @@ class Application
         resp.write "#{cart_item}"
       end
     end
-    
+
     resp.finish
   end
 end
