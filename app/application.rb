@@ -22,7 +22,7 @@ puts "test 2"
       resp.write handle_cart(search_term)
 
     elsif req.path.match(/add/)
-puts "test 1"
+puts "search_term = #{search_term}"
       search_term = req.params["q"]
       resp.write handle_add(search_term)
 
