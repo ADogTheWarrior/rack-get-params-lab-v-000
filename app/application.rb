@@ -40,14 +40,13 @@ class Application
       return "Your cart is empty"
     else
       return "#{@@cart}"
-      end
     end
   end
 
   def handle_add(search_term)
-    if @@items.includes?("Apples")
-      # add apples
-      # output "added Figs"
+    if @@items.includes?(search_term)
+      @@cart << search_term
+      return "added #{search_term}"
     else
       "We don't have that item"
     end
