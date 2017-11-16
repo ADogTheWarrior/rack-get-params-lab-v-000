@@ -43,4 +43,11 @@ class Application
 
     resp.finish
   end
+
+  def add
+    if included?
+    else
+      "We don't have that item"
+    end
+  end
 end
