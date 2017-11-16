@@ -29,11 +29,18 @@ class Application
     end
   end
 
-  def cart
+  def cart(env)
+    resp = Rack::Response.new
+    req = Rack::Request.new(env)
+    
     if @@cart.count == 0
-      puts "Your cart is empty"
+      resp.write "Your cart is empty"
     else
-      @@cart.to_s
+      @@cart.each do |cart_item|
+        resp.write "#{cart_item}"
+      end
     end
+    
+    resp.finish
   end
 end
