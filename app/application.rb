@@ -13,16 +13,17 @@ class Application
       end
 
     elsif req.path.match(/search/)
-puts "test 2"
+puts "search search_term = #{search_term}"
       search_term = req.params["q"]
       resp.write handle_search(search_term)
 
     elsif req.path.match(/cart/)
+puts "cart search_term = #{search_term}"
       search_term = req.params["q"]
       resp.write handle_cart(search_term)
 
     elsif req.path.match(/add/)
-puts "search_term = #{search_term}"
+puts "add search_term = #{search_term}"
       search_term = req.params["q"]
       resp.write handle_add(search_term)
 
@@ -51,8 +52,8 @@ puts "search_term = #{search_term}"
   end
 
   def handle_add(search_term)
-puts "search_term = #{search_term}"
-puts "@@items = #{@@items}"
+# puts "search_term = #{search_term}"
+# puts "@@items = #{@@items}"
     if @@items.include?(search_term)
       @@cart << search_term
       return "added #{search_term}"
