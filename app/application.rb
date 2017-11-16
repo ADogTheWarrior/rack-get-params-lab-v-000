@@ -12,10 +12,10 @@ class Application
         resp.write "#{item}\n"
       end
 
-    elsif req.path.match(/search/)
-puts "test 2"
-      search_term = req.params["q"]
-      resp.write handle_search(search_term)
+#     elsif req.path.match(/search/)
+# puts "test 2"
+#       search_term = req.params["q"]
+#       resp.write handle_search(search_term)
 
     elsif req.path.match(/cart/)
       search_term = req.params["q"]
