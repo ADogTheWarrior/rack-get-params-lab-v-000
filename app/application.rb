@@ -45,7 +45,7 @@ class Application
   end
 
   def add
-    if included?
+    if @@items.includes?("Apples")
     else
       "We don't have that item"
     end
