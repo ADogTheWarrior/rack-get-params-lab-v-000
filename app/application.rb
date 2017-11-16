@@ -14,16 +14,15 @@ class Application
 
     elsif req.path.match(/search/)
       search_term = req.params["q"]
-  puts "search search_term = #{search_term}"
       resp.write handle_search(search_term)
 
     elsif req.path.match(/cart/)
       resp.write handle_cart
 
     elsif req.path.match(/add/)
-      search_term = req.params["q"]
-  puts "add search_term = #{search_term}"
-      resp.write handle_add(search_term)
+      add_term = req.params["q"]
+  puts "add_term = #{add_term}"
+      resp.write handle_add(add_term)
 
     else
       resp.write "Path Not Found"
@@ -49,10 +48,10 @@ class Application
     end
   end
 
-  def handle_add(search_term)
+  def handle_add(add_term)
 # puts "search_term = #{search_term}"
 # puts "@@items = #{@@items}"
-    if @@items.include?(search_term)
+    if @@items.include?(add_term)
       @@cart << search_term
       return "added #{search_term}"
     else
