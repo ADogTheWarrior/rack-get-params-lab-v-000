@@ -20,7 +20,7 @@ class Application
       resp.write handle_cart
 
     elsif req.path.match(/add/)
-      add_term = req.params["q"]
+      add_term = req.params["data"]
   puts "add_term = #{add_term}"
       resp.write handle_add(add_term)
 
