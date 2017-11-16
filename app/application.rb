@@ -49,8 +49,6 @@ class Application
   end
 
   def handle_add(add_term)
-# puts "search_term = #{search_term}"
-# puts "@@items = #{@@items}"
     if @@items.include?(add_term)
       @@cart << search_term
       return "added #{search_term}"
