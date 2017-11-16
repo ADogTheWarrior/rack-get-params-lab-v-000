@@ -37,8 +37,9 @@ class Application
 
   def handle_cart(search_term)
     if @@cart.count == 0
+      return "Your cart is empty"
     else
-      @@cart.each do |cart_item|
+      return "#{@@cart}"
       end
     end
   end
