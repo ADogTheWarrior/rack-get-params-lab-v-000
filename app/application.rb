@@ -13,18 +13,18 @@ class Application
       end
 
     elsif req.path.match(/search/)
-puts "search search_term = #{search_term}"
       search_term = req.params["q"]
+  puts "search search_term = #{search_term}"
       resp.write handle_search(search_term)
 
     elsif req.path.match(/cart/)
-puts "cart search_term = #{search_term}"
       search_term = req.params["q"]
+  puts "cart search_term = #{search_term}"
       resp.write handle_cart(search_term)
 
     elsif req.path.match(/add/)
-puts "add search_term = #{search_term}"
       search_term = req.params["q"]
+  puts "add search_term = #{search_term}"
       resp.write handle_add(search_term)
 
     else
