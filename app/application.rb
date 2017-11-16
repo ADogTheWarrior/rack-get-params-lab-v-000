@@ -39,7 +39,8 @@ class Application
     if @@cart.count == 0
       return "Your cart is empty"
     else
-      return "#{@@cart}"
+      cart = @@cart.join("\n")
+      return cart
     end
   end
 
